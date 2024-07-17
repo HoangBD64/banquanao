@@ -7,6 +7,7 @@ import { Button } from "@mui/material";
 
 const HomeSectionCarosel = ({data, sectionName}) => {
   const [activeIndex, setActiveIndex] = useState(0);
+  
 
   const responsive = {
     0: { items: 1 },
@@ -14,8 +15,13 @@ const HomeSectionCarosel = ({data, sectionName}) => {
     1024: { items: 5.5 },
   };
 
-  const slidePrev = () => setActiveIndex(activeIndex - 1);
-  const slideNext = () => setActiveIndex(activeIndex + 1);
+  const slidePrev = () =>{ 
+    setActiveIndex((prevActiveIndex) => prevActiveIndex - 1);
+  };
+
+  const slideNext = () => {
+    setActiveIndex((prevActiveIndex) => prevActiveIndex + 1);
+  };
   
   const synActiveIndex = ({ item }) => setActiveIndex(item);
   
